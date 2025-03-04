@@ -32,13 +32,13 @@ function partOneB () {
   let bill, billNumber, tip;
 
   // 1. prompt for the bill
-  
+  bill =  prompt("What is your bill?");
   // 2. convert it to number
-  
+   billNumber = Number(bill);
   // 3. calculate tip
-
+  tip = billNumber*.20;
   // 4. set the message
-  
+  messageParagraph.innerHTML = `your bill is ${bill}. Your tip is ${tip} at 20%.`
 }
 
 // Example
@@ -61,15 +61,16 @@ function partTwoA () {
 function partTwoB () {
   alert("Try it!");
   // 1. prompt for the bill
-
+  bill = prompt("What is your Bill?");
   // 2. convert it to number
-
+  billNumber = Number(bill);
   // 3. calculate split bill
-
+  split = billNumber/3;
   // 4. set the message
+  messageParagraph.innerHTML = `Your bill is ${bill}. You part of the bill is ${split} among th;ree friends.`;
 }
 
-// Example
+// Example 3
 // Use functions to create a tip calculator 
 // This is a function that takes a number, x as an argument and returns the amount you shuold tip at 10%
 function tenPercentTip(x) {
@@ -102,14 +103,14 @@ function partThreeB () {
   alert("Try it!");
   let bill, billNumber, tip, message;
   // 1. prompt the user for the bill
-  
+    bill = prompt ("the user for the bill");
   // 2. convert the bill to a number
-  
+    billNumber = Number(bill);
   // 3. calculate the tip
-  
+    tip = tenPercentTip(billNumber);
   // 4. create the message
   // HINT: use tipMessage, which is defined above partThreeA
-  
+  messageParagraph.innerHTML = `Your bill is ${bill}. Your tip is ${tip}at 10%.`
   // 5. set the message
   messageParagraph.innerHTML = message;
 }
@@ -148,13 +149,14 @@ function partFourB () {
   alert("Try it!");
   let bill, billNumber, split, message;
   // 1. prompt for bill
-
+  bill = prompt("What is your bill?");
   // 2. convert bill to number 
-
+  billNumber = Number(bill);
   // 3. use a function to calculate the split
-
+  split = billnumber/4;
   // 4. use a function to create the message
-
+  messageParagraph.innerHTML = `Your bill is ${bill}. You part of the bill is ${split} among four friends.`;
+  
   messageParagraph.innerHTML = message;
 }
 
@@ -163,3 +165,22 @@ function partFourB () {
 // Then use the splitBillByN in part 4 A and B instead of splitBillByThree and splitBillByFour.
 // Think about how functions and arguments can make your code more flexible and ready to take on new requirements. (For example, can you make it split bill by 8 or 10 friends? How does splitBillByN help?)
 
+function splitBillByN(bill,n) {
+  return bill / n;
+}
+
+function part4A() {
+  let totalBill = prompt("What is the total bill amount?");
+  let numberOfFriends = prompt("How many friends are splitting the bill?");
+  totalBill = Number(totalBill);
+  numberOfFriends = Number(numberOfFriends);
+  tipPercentage = Number(tipPercentage);
+
+  let totalWithTip = totalBill + (totalBill * (tipPercentage / 100));
+  let amountPerPerson = splitBillByN( totalBill, numberOfFriends);
+
+  messageParagraph.innerHTML = `the total bill is $${totalBill}. Split between ${numberOfFriends} friends, each person pays $${amountPerPerson.toFixed(2)}.  Split between ${numberOfFriends} friends, each person pays $$amountPerson. to Fixed(2)}.`;
+
+}
+
+part4A.onclick = part4A;

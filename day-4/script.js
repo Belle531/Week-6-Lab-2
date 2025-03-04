@@ -24,9 +24,11 @@ function partOneA () {
 function partOneB () {
   alert("Try it!");
   // 1. Create a for loop.
-
+  let highNumber = 6;
     // 2. give the user and alert with the current number.
+  alert(`The number is ${i}`); {
 
+  }
 }
 
 // Example
@@ -46,7 +48,7 @@ function partTwoA () {
     alert(`The friend is ${friends[i]}`);
   }
 }
-
+displayFriends();
 // Try it!
 // Try to loop over favorite flavors
 // Or any other topic you like.
@@ -54,13 +56,15 @@ function partTwoB () {
   messageParagraph.innerHTML = "Flavors";
 
   // 1. Create an array of 5 flavors
-
+  let flavor = ["Chocolate", "Vanilla", "Strawberry", "Mint", "coffee"];
   // 2. Find the length of the array
-
+  let highNumber = flavor.length;
   // 3. Create a for loop.
-
-    // 4. give the user and alert with the current friend.
-
+   for (let i = 0; i <highNumber; i++) {
+    
+   }
+    // 4. give the user and alert with the current flavor.
+    alert(`The flavor is ${flavors[i]}`);
 }
 
 // Example
@@ -69,7 +73,7 @@ function partThreeA () {
   messageParagraph.innerHTML = "Friends";
 
   // 1. create an array of 5 friends
-  let friends = ["Andy", "Betty", "Cathy", "Danna", "Edward"];
+  let flavors = ["Andy", "Betty", "Cathy", "Danna", "Edward"];
   // 2. find the length of the array
   let highNumber = friends.length;
   // 3. create a for loop
@@ -86,13 +90,18 @@ function partThreeB () {
 
   alert("Try it!");
   // 1. create an array of 5 flavors
-
+  let flavors = ["Coffee, Mint, Strawberry, Vanilla, Chocolate"];
   // 2. find the length of the array
- 
-  // 3. create a for loop
+  let highNumber = flavors.length; 
 
+  // 3. create a for loop
+  for (let i = 0; i <highNumber; i++) {
+
+  }
     // 4. write the friend to the innerHTML of the list
-}
+  messageList.innerHTML += `<li>${flavors[i]}</li>`;
+  }
+
 
 // Example
 // Now let's add friends to the list
@@ -101,11 +110,12 @@ function partThreeB () {
 // This will give us a fresh list each time
 let friends = []; // NOTE: the friends array is outside the function. Why?
 function partFourA () {
-  let newFriend, highNumber;
+  newFriend, highNumber;
   // 1. prompt for a new friend 
-  newFriend = prompt("Add a friend to the list.");
+ let newFriend = prompt("Add a friend to the list.");
 
   // 2. add the friend to the array with push()
+  if(!friends.includes(newFriends))
   friends.push(newFriend);
 
 
@@ -125,14 +135,14 @@ function partFourA () {
 
 // Try it!
 // Try to add flavors to the list
-let flavors = [];
+  let flavors = [];
 function partFourB () {
   let newFlavor, highNumber;
 
   // 1. prompt for a flavor
-
+  newFlavor = prompt("Add a flavor to the list.");
   // 2. add the flavor to the array with push()
-
+  flavors.push(newFlavor);
   // 3. reset the list in the innerHTML
   messageList.innerHTML = "";
   // 4. set the message to "Flavors"
@@ -142,9 +152,31 @@ function partFourB () {
   highNumber = flavors.length;
 
   // 6. write all the flavors back to the HTML list from the array, updated with our new flavor.
-
+  messageList.innerHTML += `<li>${flavors[i]}</li>`;
 }
 
 // BONUS
 // Reimplement your idea from day 3 using loops, or think of a new idea.
 // EXTRA BONUS: Use an `if` statement and the JavaScript array method `includes` to check if the data entered is a duplicate. Do not add it if it is a duplicate.
+
+document.getElementById("addDataButton").onclick = function() {
+  let newData = prompt("Enter some data to add:");
+  messageList.innerHTML += `<li>${newData}</li>`; 
+};
+
+  friends = [];
+function addFriends() {
+  let newFriend = prompt("Add a friend to the list."); 
+  if (!friends.includes(newFriend)) {
+    friends.push(newFriend);
+    alert(`${newFriend} has been added to the list.`);
+  } else {
+    alert(`${newFriend} is already in the list.`);
+  }
+  messageList.innerHTML = "";
+  messageParagraph.innerHTML = "Friends";
+  let highNumber = friends.length;
+  for (let i = 0; i < highNumber; i++) {
+    messageList.innerHTML += `<li>${friends[i]}</li>`;
+  }
+}

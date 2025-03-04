@@ -49,3 +49,9 @@ function handleButtonFourB() {
   partFourB();
 }
 part4b.onclick = handleButtonFourB;
+
+document.getElementById("addDataButton").onclick = function() {
+  let newData = prompt("If you have any questions or need further assistance you can email me at tu.es.bell66@gmail.com:");
+
+  messageList.innerHTML += `<li>{newData}</li>`;
+}

@@ -57,8 +57,29 @@ function partTwoB () {
   let friends = [];
   // 1. Add your friends to the array
 
-  // 2. write your friends to the innerHTML of the document
+    friends[0] = "Cassandra";
+    friends[1] = "Bob";
+    friends[2] = "Charlie";
+    friends[3] = "Daisy";
+    friends[4] = "Eve";
 
+    messageParagraph.innerHTML = `Your friends are ${friends[0]}, ${friends[1]}, ${friends[2]}, ${friends[3]}, ${friends[4]}.`;
+  }
+  
+  function partTwoA(){
+    let friends = ["Cassandra", "Bob", "Charlie", "Daisy", "Eve"];
+
+    messageParagraph.innerHTML = "Your friends are";
+    messageParagraph.innerHTML += `${friends[0]}`;
+    messageParagraph.onnerHTML += `, ${friends[1]}`;
+    messageParagraph.onnerHTML += `, ${friends[2]}`;
+    messageParagraph.onnerHTML += `, ${friends[3]}`;
+    messageParagraph.onnerHTML += `, ${friends[4]}`;
+  }
+  // 2. write your friends to the innerHTML of the document
+  function partThreeA() {
+    let friend = prompt ("enter a friend's name.");
+    messageParagraph.innerHTML `, ${friends}`;
 }
 
 // Example
@@ -75,8 +96,9 @@ function partThreeA () {
 // Try prompting for a friend with a slightly different prompt or writing the message in a slightly different format.
 function partThreeB () {
   // 1. prompt for a friend
-
+  let friends = prompt("Enter the name of a friend you'd like to add.");
   // 2. add the friend to the message
+  messageParagraph.innerHTML += `${friend}`;
 }
 
 // Example
@@ -109,15 +131,22 @@ function partFourB () {
   totalFavFlavors = myFavFlavors.length;
 
   // 1. prompt for a flavor
+  newFavFlavor = prompt(`Yor have ${totalFavFlavors} favorite ice cream flavors. To add another, enter a flavor.`);
 
   // 2. add the flavor to the array with push()
+  myFavFlavors.push(newFavFlavor);
 
   // 3. add the flavor to the message
-
+  messageList.innerHTML +=`<li>${newFavFlavor}</li>`;
   // 4. log the array to the console for debugging
-
+  console.log(myFavFlavors);
 }
 
 // BONUS: Try to add your own button to the page that will accept user input to add to the page.
 // The key is to collect new input from the user without overwriting the existing data.
 // Be creative. What sort of data would be useful or fun to collect?
+
+document.getElementById("addDataButton").onclick = function(){
+  let newData = prompt("Enter some ddata to add:");
+  messageList.innerHTML += `<li>${newData}</li>`;
+}
